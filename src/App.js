@@ -1,308 +1,184 @@
 import React from 'react';
 
-const HomePage = () => {
-  const featuredLawyers = [
-    {
-      id: 1,
-      name: 'John Doe',
-      location: 'Los Angeles, CA',
-      expertise: ['Criminal Law', 'Family Law'],
-      rating: 4.8,
-      fee: '$200/hour',
-      availability: 'Available now',
-      image: 'https://source.unsplash.com/random/400x400',
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      location: 'New York, NY',
-      expertise: ['Personal Injury', 'Immigration Law'],
-      rating: 4.9,
-      fee: '$250/hour',
-      availability: 'Available in 2 days',
-      image: 'https://source.unsplash.com/random/401x400',
-    },
-    {
-      id: 3,
-      name: 'Mike Johnson',
-      location: 'Chicago, IL',
-      expertise: ['Bankruptcy Law', 'Real Estate Law'],
-      rating: 4.7,
-      fee: '$180/hour',
-      availability: 'Available in 5 days',
-      image: 'https://source.unsplash.com/random/402x400',
-    },
-    {
-      id: 4,
-      name: 'Karen Williams',
-      location: 'Miami, FL',
-      expertise: ['Business Law', 'Employment Law'],
-      rating: 4.6,
-      fee: '$220/hour',
-      availability: 'Available in 7 days',
-      image: 'https://source.unsplash.com/random/403x400',
-    },
-  ];
-
-  const testimonials = [
-    {
-      id: 1,
-      name: 'John Smith',
-      title: 'CEO, ABC Company',
-      image: 'https://source.unsplash.com/random/100x100',
-      testimonial:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit justo eu urna ultricies, sit amet hendrerit neque sollicitudin. Nullam nec ex vel nulla pharetra aliquam.',
-    },
-    {
-      id: 2,
-      name: 'Jane Doe',
-      title: 'Lawyer',
-      image: 'https://source.unsplash.com/random/101x100',
-      testimonial:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit justo eu urna ultricies, sit amet hendrerit neque sollicitudin. Nullam nec ex vel nulla pharetra aliquam.',
-    },
-    {
-      id: 3,
-      name: 'Mike Wilson',
-      title: 'Entrepreneur',
-      image: 'https://source.unsplash.com/random/102x100',
-      testimonial:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit justo eu urna ultricies, sit amet hendrerit neque sollicitudin. Nullam nec ex vel nulla pharetra aliquam.',
-    },
-    {
-      id: 4,
-      name: 'Karen Johnson',
-      title: 'Manager',
-      image: 'https://source.unsplash.com/random/103x100',
-      testimonial:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed hendrerit justo eu urna ultricies, sit amet hendrerit neque sollicitudin. Nullam nec ex vel nulla pharetra aliquam.',
-    },
-  ];
-
+const LawyerZone = () => {
   return (
     <div className="bg-gray-100">
-      <header className="px-4 py-3 bg-green-700 shadow-md">
-        <div className="flex items-center justify-between">
-          <h1 className="text-white font-bold text-lg uppercase">Lawyerzone</h1>
+      <header className="bg-green-500 text-white py-4">
+        <nav className="container mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">LawyerZone</h1>
           <div>
-            <button className="px-4 py-2 bg-white text-green-700 rounded-md mr-4 hover:bg-gray-200 transition duration-300 ease-in-out">
-              Login
+            <button className="bg-white text-green-500 rounded-md px-4 py-2 mx-2">Log in</button>
+            <button className="bg-green-700 text-white rounded-md px-4 py-2 mx-2">Sign up</button>
+          </div>
+        </nav>
+      </header>
+      <div className="container mx-auto flex justify-center pt-12">
+        <form className="w-full max-w-xl">
+          <div className="flex items-center border-b border-gray-600 py-2">
+            <input
+              className="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none"
+              type="text"
+              placeholder="Search by location, expertise, name, etc."
+              aria-label="Full name"
+            />
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+              Search
             </button>
-            <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out">
-              Sign Up
-            </button>
+          </div>
+        </form>
+      </div>
+      <div className="container mx-auto my-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="bg-white rounded-md p-4">
+          <img
+            className="object-cover w-full h-48 rounded-md"
+            src="https://source.unsplash.com/random"
+            alt="Featured Lawyer"
+          />
+          <h2 className="text-xl font-bold mt-2 mb-1">Jennifer Smith</h2>
+          <p className="text-gray-700 mb-2">Criminal Defense Lawyer</p>
+          <p className="text-gray-600 text-sm mb-4">San Francisco, CA</p>
+          <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full w-full">
+            Book
+          </button>
+        </div>
+        <!-- Repeat the above featured lawyer card 2 more times -->
+      </div>
+      <div className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto my-4">
+          <h2 className="text-3xl font-bold mb-4">Testimonials</h2>
+          <div className="flex flex-wrap justify-center">
+            <div className="w-full md:w-1/2 lg:w-1/3 p-4">
+              <img
+                className="object-cover w-full h-48 rounded-md"
+                src="https://source.unsplash.com/random"
+                alt="Testimonial"
+              />
+              <p className="text-lg font-bold mt-2 mb-1">John Doe</p>
+              <p className="text-gray-400 mb-4">Personal Injury Lawyer</p>
+              <p className="text-gray-400 text-sm mb-4">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              </p>
+            </div>
+            <!-- Repeat the above testimonial card 2 more times -->
           </div>
         </div>
-      </header>
-      <main>
-        <section className="px-4 py-6">
-          <div className="max-w-3xl mx-auto">
-            <form>
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-1/2">
-                  <input
-                    type="text"
-                    placeholder="Expertise"
-                    className="w-full p-2 border border-gray-400 rounded-md"
-                  />
-                </div>
-                <div className="w-1/2">
-                  <input
-                    type="text"
-                    placeholder="Location"
-                    className="w-full p-2 border border-gray-400 rounded-md"
-                  />
-                </div>
+      </div>
+      <div className="container mx-auto my-12">
+        <div className="flex flex-wrap justify-center">
+          <div className="w-full md:w-1/2 lg:w-1/3 p-4">
+            <img
+              className="object-cover w-full h-64 rounded-md"
+              src="https://source.unsplash.com/random"
+              alt="Featured Lawyer"
+            />
+            <h2 className="text-xl font-bold mt-2 mb-1">Jennifer Smith</h2>
+            <p className="text-gray-700 mb-2">Criminal Defense Lawyer</p>
+            <div className="flex items-center mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-green-500 mr-1" viewBox="0 0 20 20" fill="currentColor">
+                <path
+                  fillRule="evenodd"
+                  d="M10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10S15.523 0 10 0zm3.707 7.293a.999.999 0 00-1.414-1.414L9 8.586 7.707 7.293a.999.999 0 00-1.414 1.414L7.586 10l-1.293 1.293a.999.999 0 101.414 1.414L9 11.414l1.293 1.293a.999.999 0 101.414-1.414L10.414 10l1.293-1.293z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              <p className="text-green-500 font-bold">{`5.0 (5)`}</p>
+            </div>
+            <p className="text-gray-600 text-sm mb-4">San Francisco, CA</p>
+            <div className="flex items-center mb-4">
+              <p className="text-gray-400 text-sm mr-2">Fee:</p>
+              <p className="font-bold">$250/hour</p>
+            </div>
+            <div className="flex items-center mb-4">
+              <p className="text-gray-400 text-sm mr-2">Availability:</p>
+              <p className="font-bold">Available</p>
+            </div>
+            <div className="flex items-center mb-4">
+              <p className="text-gray-400 text-sm mr-2">Expertise:</p>
+              <div className="flex flex-wrap">
+                <span className="bg-gray-300 text-gray-700 py-1 px-2 rounded-full text-sm mr-2 mb-2">Criminal Defense</span>
+                <span className="bg-gray-300 text-gray-700 py-1 px-2 rounded-full text-sm mr-2 mb-2">Litigation</span>
+                <span className="bg-gray-300 text-gray-700 py-1 px-2 rounded-full text-sm mr-2 mb-2">Contracts</span>
               </div>
-              <div className="flex items-center space-x-4 mb-8">
-                <div className="w-1/2">
-                  <input
-                    type="text"
-                    placeholder="Fee"
-                    className="w-full p-2 border border-gray-400 rounded-md"
-                  />
-                </div>
-                <div className="w-1/2">
-                  <select className="w-full p-2 border border-gray-400 rounded-md">
-                    <option value="featured">Featured Lawyers</option>
-                    <option value="all">All Lawyers</option>
-                  </select>
-                </div>
-              </div>
-              <div className="text-right">
-                <button className="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out">
-                  Search
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-        <section className="px-4 py-6 bg-gray-200">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Featured Lawyers</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {featuredLawyers.map((lawyer) => (
-                <div key={lawyer.id} className="bg-white rounded-lg shadow-md p-4">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <img
-                      src={lawyer.image}
-                      alt={lawyer.name}
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                    <div>
-                      <h3 className="text-lg font-bold">{lawyer.name}</h3>
-                      <p className="text-gray-500">{lawyer.location}</p>
-                    </div>
-                  </div>
-                  <div className="mb-4">
-                    {lawyer.expertise.map((expertise) => (
-                      <span
-                        key={expertise}
-                        className="bg-green-500 text-white text-xs px-2 py-1 rounded-md mr-2"
-                      >
-                        {expertise}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="flex items-center space-x-4 mb-4">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      className="w-5 h-5 text-yellow-400"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 11l7-7 7 7M5 19l7-7 7 7"
-                      />
-                    </svg>
-                    <p className="text-yellow-400">{lawyer.rating}</p>
-                    <p>{lawyer.fee}</p>
-                    <p className="text-green-500">{lawyer.availability}</p>
-                  </div>
-                  <button className="w-full rounded-md py-2 bg-green-500 text-white hover:bg-green-600">
-                    Book Now
-                  </button>
-                </div>
-              ))}
+            </div>
+            <div className="flex mb-4">
+              <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-full mr-2">
+                Book
+              </button>
+              <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-full">
+                Contact
+              </button>
             </div>
           </div>
-        </section>
-        <section className="px-4 py-6">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4">Testimonials</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {testimonials.map((testimonial) => (
-                <div key={testimonial.id} className="bg-white rounded-lg shadow-md p-4">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
-                    />
-                    <div>
-                      <h3 className="text-lg font-bold">{testimonial.name}</h3>
-                      <p className="text-gray-500">{testimonial.title}</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-800 mb-4">{testimonial.testimonial}</p>
-                </div>
-              ))}
-            </div>
+          <!-- Repeat the above lawyer profile card 2 more times -->
+        </div>
+      </div>
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="container mx-auto flex flex-wrap justify-between">
+          <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <h2 className="text-lg font-bold mb-2">LawyerZone</h2>
+            <p className="text-gray-400 text-sm mb-4">
+              Find the perfect lawyer for your legal needs
+            </p>
           </div>
-        </section>
-      </main>
-      <footer className="px-4 py-6 bg-gray-700 text-white">
-        <div className="max-w-5xl mx-auto">
-          <nav className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-4">
-              <a href="/" className="font-bold text-lg uppercase">
-                Lawyerzone
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                Terms and Conditions
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                Terms of Service
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                Privacy Policy
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                Experts Directory
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                Locations
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                About Us
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                How it Works
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                FAQ
-              </a>
-              <a href="/" className="text-gray-400 hover:text-white transition duration-300 ease-in-out">
-                Contact Us
-              </a>
-            </div>
-          </nav>
-          <div className="flex items-center justify-between">
-            <p className="text-gray-400">© 2023 Lawyerzone. All rights reserved.</p>
-            <div className="flex items-center space-x-4">
-              <a href="/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 h-6 text-gray-400 hover:text-white transition duration-300 ease-in-out"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4.73 3.99999C3.40006 5.32999 3.40006 7.47999 4.73 8.80999L9.59 13.67C10.92 14.9999 13.08 14.9999 14.41 13.67L19.27 8.80999C20.6 7.47999 20.6 5.32999 19.27 3.99999L14.41 8.85999C13.89 9.37999 13.12 9.37999 12.6 8.85999L10.5 6.75999C9.98 6.23999 9.22 6.23999 8.7 6.75999L5.59 9.85999C5.07 10.38 4.3 10.38 3.78 9.85999L3.78 9.85999C3.26 9.33999 3.26 8.56999 3.78 8.04999L6.88 4.93999C7.4 4.40999 8.16 4.40999 8.68 4.93999L10.78 7.03999"
-                  />
-                </svg>
-              </a>
-              <a href="/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 h-6 text-gray-400 hover:text-white transition duration-300 ease-in-out"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </a>
-              <a href="/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  className="w-6 h-6 text-gray-400 hover:text-white transition duration-300 ease-in-out"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M20 12H4"
-                  />
-                </svg>
-              </a>
-            </div>
+          <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <h3 className="text-lg font-bold mb-2">Links</h3>
+            <ul className="list-none">
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  Terms and Conditions
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  Terms of Service
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  Privacy Policy
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <h3 className="text-lg font-bold mb-2">Directory</h3>
+            <ul className="list-none">
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  Experts
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  Locations
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
+            <h3 className="text-lg font-bold mb-2">Information</h3>
+            <ul className="list-none">
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  About Us
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  How it Works
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  FAQ
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="#" className="text-gray-400 hover:text-white text-sm">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </footer>
@@ -310,4 +186,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default LawyerZone;
